@@ -1,0 +1,13 @@
+<template name="mapPage">
+  {{#if mapPage}}
+  	{{>nav title="Home" black=true}}
+  	<div class="content-scrollable">
+	    <div class="map-container">
+	      {{> countMap }}
+	    </div>
+    </div>
+  {{else}}
+    {{> washroomPage }}
+  {{/if}}
+</template>
+

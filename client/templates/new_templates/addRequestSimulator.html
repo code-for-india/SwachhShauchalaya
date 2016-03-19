@@ -1,0 +1,46 @@
+<template name="addRequestSimulator">
+  <!-- {{>nav title="Home" black=true}} -->
+  <div id="admin">
+    <!-- <a href="/" class="back-desktop"><span class="icon-arrow-left-alt"></span> Back</a> -->
+    <div class="wrapper-admin">
+        <div class="form-group-box" style="height: 250px;border: 1px solid black;">
+    	<form class="form-share">
+        <div class="group_sumbit" style="margin-left: 22.5%;">
+    	  <div class="form-group" style="display: inline;"> 
+              <select name="item" class="form-control" required>
+		      {{#each washRooms}}
+		            <option value={{this.name}}>{{this.name}}</option>
+		      {{/each}}
+		      </select>
+    	  </div>
+
+    	    <label for="requestType" class="checkbox" style="display: inline;">
+    	      <input type="radio" name="type" id="tweeting" value="Clean" required>
+    	      <span>Cleaning Request</span>
+    	    </label>
+    	    <label for="requestType" class="checkbox" style="display: inline;">
+    	      <input type="radio" name="type" id="tweeting" value="Maintenance" required>
+    	      <span>Maintenance Request</span>
+    	    </label>
+            </div>
+    	  <button class="btn-primary" type='submit' style="margin-top: 15px;">
+    	      Submit
+    	  </button>
+    	</form>
+
+            <div class="form-group" style="margin-top: 68px">
+                <select name="washRoomsAddPerson" class="form-control" required>
+                {{#each washRooms}}
+                    <option value={{this.name}}>{{this.name}}</option>
+                {{/each}}
+                </select>
+            </div>
+
+          <button id="addingPerson" class="btn-primary" style="margin-top: 15px;">
+              Add Visitor
+          </button>
+        </div>
+    </div>
+  </div>
+</template>
+

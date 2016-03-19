@@ -1,0 +1,42 @@
+<template name="washroomPage">
+	<div class="page">
+    	{{>nav title="Washrooms"}}
+	    <div class="content-scrollable">
+	      	<div style="margin-top:50px">
+	      		<div class = "mainWRName"><a href="{{pathFor 'pie'}}" >{{mainWRName}}</a></div>
+	      		<div class = "washRoomDetailsMain">
+		      		<div class = "detailRow">
+		      				<label id="totalVisits" class = "detailLabel left">No. of people visited during this Month : </label>
+		      				<label class = "detailValue right">{{totalVisits}}</label> 
+		      		</div>
+		      		<div class = "detailRow">
+		      				<label id="totalRequests" class = "detailLabel left">No. of complaints raised during this Month : </label>
+		      				<label class = "detailValue right">{{totalRequests}}</label> 
+		      		</div>
+		      		<div class = "detailRow">
+		      				<label id="Rating" class = "detailLabel left">Washroom Rating</label>
+		      				<label class = "detailValue right">{{Rating}}</label> 
+		      		</div>
+		      	</div>	
+			    {{#each selectedLoo}}
+			    	<div class = "washRoomDetails">
+				          <div class = "detailRow subWRTitle">{{this.name}}</div>
+				           <div class = "detailRow">
+				          		<label id="openRequests" class = "detailLabel left">Open Complaints : </label>
+				          		<label class = "detailValue right">{{this.openRequests}}</label> 
+				          </div>
+				          <div class = "detailRow">
+				          		<label id="cleanRequests" class = "detailLabel left">Cleaning Complaints : </label>
+				          		<label class = "detailValue right">{{this.cleanRequests}}</label> 
+				          </div>
+				          <div class = "detailRow">
+				          		<label id="maintenanceRequests" class = "detailLabel left">Maintenance Complaints : </label>
+				          		<label class = "detailValue right">{{this.maintenanceRequests}}</label> 
+				          </div>
+				          <a class="btn-primary closeButton" id="mgrButton">Close Complaints</a>
+			        </div>
+			    {{/each}}
+	      	</div>
+	    </div>
+  	</div>
+</template>

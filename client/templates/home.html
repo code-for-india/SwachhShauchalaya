@@ -1,0 +1,40 @@
+<template name="home">
+  <div class="page home">
+    {{>nav title='Home' black=true}}
+    {{#if adminClicked}}
+      {{> mapPage}}
+    {{else}}
+      <div class="content-scrollable">
+        <div class="bg-image home">
+          <h1 class="title-home">
+            Swachh Shauchalaya
+          </h1>
+          <!-- <span class="hours"><span class="title-callout">Hours</span>Mon–Fri 9-6pm, Sat 10-5pm</span> -->
+          <span class="arrow"></span>
+        </div>
+        <div class={{classforPopUp}}>
+          <div>
+            <h2 class="list-title">Choose a language / भाषा चुनें</h2>
+            <h2 class="list-title titleLanguage"><label for="language" class="checkbox" style="display: inline;">
+              <input type="radio" name="language" value="hindi" required>
+              <span>हिंदी</span>
+            </label>
+            <label for="language" class="checkbox" style="display: inline;">
+              <input type="radio" name="language" value="english" required>
+              <span>English</span>
+            </label></h2>
+          </div>
+        </div>
+        <div class="callout-news">
+          <span id="welcomeNote" class="title-callout">Moving towards a Cleaner India</span>
+        </div>
+        <h2 class="list-title" id="adminMsg">Near By Toilets</h2>
+        <div class="list-subtitle" id="adminSubtitle">See what is the condition of near by toilets</div>
+        <a href="{{pathFor 'mapPage'}}" id="adminButton" class="btn-primary">Log in to Admin View</a>
+        <h2 class="list-title" id="mgrSubtitle">Toilets assigned to You</h2>
+        <div class="list-subtitle" id="mgrMsg">See what is the condition toilets assigned to you</div>
+        <a href="{{pathFor 'washroomPage'}}" class="btn-primary" id="mgrButton">Log in to Floor Manager's View</a>
+      </div>
+    {{/if}}
+  </div>
+</template>
